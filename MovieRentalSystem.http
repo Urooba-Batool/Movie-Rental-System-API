@@ -1,0 +1,12 @@
+@MRS = http://localhost:5099
+
+GET {{MovieRentalSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{MRS}}/api/users
+Accept: application/json
+
+###
+
