@@ -161,3 +161,4 @@ C:\Users\admin\OneDrive\Desktop\MovieRentalSystem\obj\Debug\net9.0\MovieRentalSy
 C:\Users\admin\OneDrive\Desktop\MovieRentalSystem\obj\Debug\net9.0\MovieRentalSystem.genruntimeconfig.cache
 C:\Users\admin\OneDrive\Desktop\MovieRentalSystem\obj\Debug\net9.0\ref\MovieRentalSystem.dll
 C:\Users\admin\OneDrive\Desktop\MovieRentalSystem\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\admin\OneDrive\Desktop\MovieRentalSystem\obj\Debug\net9.0\MovieRentalSystem.sourcelink.json

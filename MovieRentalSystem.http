@@ -4,9 +4,66 @@ GET {{MovieRentalSystem_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+//users api
 
 GET {{MRS}}/api/users
 Accept: application/json
 
 ###
 
+GET {{MRS}}/api/users/1
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/users/3
+content-type: application/json
+{
+  "id": 1,
+  "firstname": "ana",
+  "lastname": "ali",
+  "email": "ana@gmai.com",
+  "password": "ana123",
+  "roleId": "1"
+}
+
+###
+
+POST {{MRS}}/api/users
+content-type: application/json
+{
+  "firstname": "anaya",
+  "lastname": "asif",
+  "email": "anaya@gmail.com",
+  "password": "anaya123",
+  "roleId": "1"
+}
+
+
+###
+//movie status api
+
+GET {{MRS}}/api/moviestatus
+Accept: application/json
+
+###
+
+GET {{MRS}}/api/moviestatus/2
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/moviestatus/1
+Content-Type: application/json
+{
+  "id": 1,
+  "statusName": "unavailable"
+}
+
+###
+
+POST {{MRS}}/api/moviestatus
+content-type: application/json
+{
+  "statusName": "discontinued"
+}
