@@ -10,24 +10,24 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class MovieStatusController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _contect;
+        private readonly MovieRentalSystemContext _context;
 
         public MovieStatusController(MovieRentalSystemContext context)
         {
-            _contect = context;
+            _context = context;
         }
 
         [HttpGet]
         public ActionResult GetMovieStatus()
         {
-            var movieStatus = _contect.MovieStatus.ToList();
+            var movieStatus = _context.MovieStatus.ToList();
             return Ok(movieStatus);
         }
 
         [HttpGet("{id}")]
         public ActionResult GetMovieStatusById(int id)
         {
-            var movieStatus = _contect.MovieStatus.Find(id);            
+            var movieStatus = _context.MovieStatus.Find(id);            
             if (movieStatus == null)
             {
                 return NotFound();
@@ -38,32 +38,28 @@ namespace MovieRentalSystem.Controllers
         [HttpPut("{id}")]
         public ActionResult UpdateMovieStatus(int id, MovieStatus updatemoviestatus)
         {
-            var movieStatus = _contect.MovieStatus.Find(id);
-            if (id == null)
-            {
-                return BadRequest();
-            }
+            var movieStatus = _context.MovieStatus.Find(id);
             if (movieStatus == null)
             {
                 return NotFound();
             }
             movieStatus.StatusName = updatemoviestatus.StatusName;
-            _contect.SaveChanges();
-            return NoContent();
+            _context.SaveChanges();
+            return Ok(movieStatus);
         }
 
         [HttpPost]
         public ActionResult CreateMovieStatus(MovieStatus newmoviestatus)
         {
-            _contect.MovieStatus.Add(newmoviestatus);
-            _contect.SaveChanges();
+            _context.MovieStatus.Add(newmoviestatus);
+            _context.SaveChanges();
             return CreatedAtAction(nameof(GetMovieStatusById), new { id = newmoviestatus.Id }, newmoviestatus);
         }
 
         [HttpPatch]
         public ActionResult PatchMovieStatus(int id, MovieStatus patchmoviestatus)
         {
-            var movieStatus = _contect.MovieStatus.Find(id);
+            var movieStatus = _context.MovieStatus.Find(id);
             if (id == null)
             {
                 return BadRequest();
@@ -73,7 +69,7 @@ namespace MovieRentalSystem.Controllers
                 return NotFound();
             }
             movieStatus.StatusName = patchmoviestatus.StatusName;
-            _contect.SaveChanges();
+            _context.SaveChanges();
             return NoContent();
         }
 

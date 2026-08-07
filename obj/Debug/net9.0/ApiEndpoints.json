@@ -1,5 +1,257 @@
 [
   {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingStatusController",
+    "Method": "GetBookingStatus",
+    "RelativePath": "api/BookingStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingStatusController",
+    "Method": "AddBookingStatus",
+    "RelativePath": "api/BookingStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingStatus",
+        "Type": "MovieRentalSystem.Models.BookingStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingStatusController",
+    "Method": "PatchBookingStatus",
+    "RelativePath": "api/BookingStatus",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "patchBookingStatus",
+        "Type": "MovieRentalSystem.Models.BookingStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingStatusController",
+    "Method": "GetBookingStatusById",
+    "RelativePath": "api/BookingStatus/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingStatusController",
+    "Method": "UpdateBookingStatus",
+    "RelativePath": "api/BookingStatus/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateBookingStatus",
+        "Type": "MovieRentalSystem.Models.BookingStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomerStatusController",
+    "Method": "GetCustomerStatus",
+    "RelativePath": "api/CustomerStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomerStatusController",
+    "Method": "AddCustomerStatus",
+    "RelativePath": "api/CustomerStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerStatus",
+        "Type": "MovieRentalSystem.Models.CustomerStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomerStatusController",
+    "Method": "PatchCustomerStatus",
+    "RelativePath": "api/CustomerStatus",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "patchCustomerStatus",
+        "Type": "MovieRentalSystem.Models.CustomerStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomerStatusController",
+    "Method": "GetCustomerStatusById",
+    "RelativePath": "api/CustomerStatus/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomerStatusController",
+    "Method": "UpdateCustomerStatus",
+    "RelativePath": "api/CustomerStatus/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateCustomerStatus",
+        "Type": "MovieRentalSystem.Models.CustomerStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MovieGenreController",
+    "Method": "GetMovieGenres",
+    "RelativePath": "api/MovieGenre",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MovieGenreController",
+    "Method": "AddMovieGenre",
+    "RelativePath": "api/MovieGenre",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addmovieGenre",
+        "Type": "MovieRentalSystem.Models.MovieGenres",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MovieGenreController",
+    "Method": "PatchMovieGenre",
+    "RelativePath": "api/MovieGenre",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "patchMovieGenre",
+        "Type": "MovieRentalSystem.Models.MovieGenres",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MovieGenreController",
+    "Method": "GetMovieGnereById",
+    "RelativePath": "api/MovieGenre/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MovieGenreController",
+    "Method": "UpdateMovieGnre",
+    "RelativePath": "api/MovieGenre/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateMovieGenre",
+        "Type": "MovieRentalSystem.Models.MovieGenres",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieRentalSystem.Controllers.MovieStatusController",
     "Method": "GetMovieStatus",
     "RelativePath": "api/MovieStatus",
@@ -49,7 +301,7 @@
   {
     "ContainingType": "MovieRentalSystem.Controllers.MovieStatusController",
     "Method": "GetMovieStatusById",
-    "RelativePath": "api/MovieStatus/id",
+    "RelativePath": "api/MovieStatus/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -57,7 +309,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -65,7 +317,7 @@
   {
     "ContainingType": "MovieRentalSystem.Controllers.MovieStatusController",
     "Method": "UpdateMovieStatus",
-    "RelativePath": "api/MovieStatus/id",
+    "RelativePath": "api/MovieStatus/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -73,7 +325,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "updatemoviestatus",

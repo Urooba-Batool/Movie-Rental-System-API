@@ -67,3 +67,89 @@ content-type: application/json
 {
   "statusName": "discontinued"
 }
+
+
+###
+//customer status api
+
+GET {{MRS}}/api/customerStatus
+Accept: application/json
+
+###
+
+GET {{MRS}}/api/customerStatus/1
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/customerStatus/1
+content-type: application/json
+{
+  "id": 1,
+  "statusName": "inactive"
+}
+
+###
+
+POST {{MRS}}/api/customerStatus
+content-type: application/json
+{
+  "statusName": "suspended"
+}
+
+
+###
+//booking status api
+
+GET {{MRS}}/api/bookingStatus
+Accept: application/json
+
+###
+
+GET {{MRS}}/api/bookingStatus/1
+acpt: application/json
+
+###
+
+PUT {{MRS}}/api/bookingStatus/1
+content-type: application/json
+{
+  "id": 1,
+  "statusName": "cancelled"
+}
+
+###
+
+POST {{MRS}}/api/bookingStatus
+Content-Type: application/json
+{
+  "statusName": "pending"
+}
+
+###
+///movie genres api
+
+GET {{MRS}}/api/movieGenre
+accept: application/json
+
+###
+
+GET {{MRS}}/api/movieGenre/1
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/movieGenre/1
+content-type: application/json
+{
+  "id" : 1,
+  "movieGenre": "mystery"
+}
+
+###
+
+POST {{MRS}}/api/movieGenre
+content-type: application/json
+{
+  "movieGenre": "comedy"
+}

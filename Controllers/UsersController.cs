@@ -52,7 +52,7 @@ namespace MovieRentalSystem.Controllers
             user.Password = updateuser.Password;
             user.RoleId = updateuser.RoleId;
             _context.SaveChanges();
-            return NoContent();
+            return Ok(user);
         }
 
         [HttpPost]
