@@ -40,6 +40,47 @@ content-type: application/json
 }
 
 
+
+
+
+
+
+###
+//roles api
+
+GET {{MRS}}/api/roles
+Accept: application/json
+
+###
+
+GET {{MRS}}/api/roles/2
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/roles/2
+content-type: application/json
+{
+  "id": 2,
+  "roleName": "manager"
+}
+
+###
+
+POST {{MRS}}/api/roles
+content-type: application/json
+{
+  "roleName": "employees"
+}
+
+
+
+
+
+
+
+
+
 ###
 //movie status api
 
@@ -67,6 +108,97 @@ content-type: application/json
 {
   "statusName": "discontinued"
 }
+
+
+
+
+
+
+
+
+
+###
+//Movies api
+
+GET {{MRS}}/api/movies
+Accept: application/json
+
+###
+
+GET {{MRS}}/api/movies/1
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/movies/1
+content-type: application/json
+{
+  "id": 1,
+  "movieTitle": "The Dark Knight",
+  "director": "Christopher Nolan",
+  "movieGenreId": 1,
+  "movieStatusId": 1,
+  "releaseYear": 2008,
+  "rentalPrice": 3.99
+}
+
+### 
+
+POST {{MRS}}/api/movies
+content-type: application/json
+{
+  "movieTitle": "Inception",
+  "director": "Christopher Nolan",
+  "movieGenreId": 1,
+  "movieStatusId": 1,
+  "releaseYear": 2010,
+  "rentalPrice": 4.99
+}
+
+
+
+
+
+
+
+
+
+
+###
+///movie genres api
+
+GET {{MRS}}/api/movieGenre
+accept: application/json
+
+###
+
+GET {{MRS}}/api/movieGenre/1
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/movieGenre/1
+content-type: application/json
+{
+  "id" : 1,
+  "movieGenre": "mystery"
+}
+
+###
+
+POST {{MRS}}/api/movieGenre
+content-type: application/json
+{
+  "movieGenre": "comedy"
+}
+
+
+
+
+
+
+
+
 
 
 ###
@@ -98,6 +230,62 @@ content-type: application/json
 }
 
 
+
+
+
+
+
+
+
+
+###
+///customer api
+
+GET {{MRS}}/api/customers
+Accept: application/json
+
+###
+
+GET {{MRS}}/api/customers/1
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/customers/1
+content-type: application/json
+{
+  "id": 1,
+  "firstname": "abeer",
+  "lastname": "arif",
+  "email": "abeer@gmail.com",
+  "age": 21,
+  "address": "islamabad",
+  "customerStatusId": 1
+}
+
+###
+
+POST {{MRS}}/api/customers
+content-type: application/json
+{
+  "firstname": "sara",
+  "lastname": "khan",
+  "email": "sara@gmail.com",
+  "age": 31,
+  "address": "karachi",
+  "customerStatusId": 2
+}
+
+
+
+
+
+
+
+
+
+
+
 ###
 //booking status api
 
@@ -126,30 +314,52 @@ Content-Type: application/json
   "statusName": "pending"
 }
 
+
+
+
+
+
+
+
+
 ###
-///movie genres api
+//booking api
 
-GET {{MRS}}/api/movieGenre
-accept: application/json
-
-###
-
-GET {{MRS}}/api/movieGenre/1
+GET {{MRS}}/api/bookings
 Accept: application/json
 
 ###
 
-PUT {{MRS}}/api/movieGenre/1
+GET {{MRS}}/api/bookings/1
+Accept: application/json
+
+###
+
+PUT {{MRS}}/api/bookings/1
 content-type: application/json
 {
-  "id" : 1,
-  "movieGenre": "mystery"
+  "id": 1,
+  "bookingDate": "2024-06-01T00:00:00",
+  "returnDate": "2024-11-07T00:00:00",
+  "totalPrice": 0,
+    "totalDays": 0,
+    "userId": 2,
+    "movieId": 3,
+    "customerId": 2,
+    "bookingStatusId": 2
 }
 
 ###
 
-POST {{MRS}}/api/movieGenre
+POST {{MRS}}/api/bookings
 content-type: application/json
 {
-  "movieGenre": "comedy"
+  "bookingDate": "2026-06-01T00:00:00",
+  "returnDate": "2027-11-07T00:00:00",
+  "totalPrice": 0,
+    "totalDays": 0,
+    "userId": 4,
+    "movieId": 3,
+    "customerId": 5,
+    "bookingStatusId": 3
 }

@@ -1,5 +1,94 @@
 [
   {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingsController",
+    "Method": "GetBookings",
+    "RelativePath": "api/Bookings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingsController",
+    "Method": "AddBooking",
+    "RelativePath": "api/Bookings",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "addBookings",
+        "Type": "MovieRentalSystem.Models.Bookings",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingsController",
+    "Method": "PatchBookings",
+    "RelativePath": "api/Bookings",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "patchBookings",
+        "Type": "MovieRentalSystem.Models.Bookings",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingsController",
+    "Method": "GetBookingsById",
+    "RelativePath": "api/Bookings/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.BookingsController",
+    "Method": "UpdateBookings",
+    "RelativePath": "api/Bookings/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateBookings",
+        "Type": "MovieRentalSystem.Models.Bookings",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieRentalSystem.Controllers.BookingStatusController",
     "Method": "GetBookingStatus",
     "RelativePath": "api/BookingStatus",
@@ -78,6 +167,90 @@
       {
         "Name": "updateBookingStatus",
         "Type": "MovieRentalSystem.Models.BookingStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomersController",
+    "Method": "GetCustomers",
+    "RelativePath": "api/Customers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomersController",
+    "Method": "AddCustomers",
+    "RelativePath": "api/Customers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addCustomers",
+        "Type": "MovieRentalSystem.Models.Customers",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomersController",
+    "Method": "PatchCustomers",
+    "RelativePath": "api/Customers",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "patchCustomer",
+        "Type": "MovieRentalSystem.Models.Customers",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomersController",
+    "Method": "GetCustomerById",
+    "RelativePath": "api/Customers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.CustomersController",
+    "Method": "UpdateCustomer",
+    "RelativePath": "api/Customers/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateCustomer",
+        "Type": "MovieRentalSystem.Models.Customers",
         "IsRequired": true
       }
     ],
@@ -252,6 +425,90 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MovieRentalSystem.Controllers.MoviesController",
+    "Method": "GetMovies",
+    "RelativePath": "api/Movies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MoviesController",
+    "Method": "AddMovies",
+    "RelativePath": "api/Movies",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addMovies",
+        "Type": "MovieRentalSystem.Models.Movies",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MoviesController",
+    "Method": "PatchMovies",
+    "RelativePath": "api/Movies",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "updateMovies",
+        "Type": "MovieRentalSystem.Models.Movies",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MoviesController",
+    "Method": "GetMoviesById",
+    "RelativePath": "api/Movies/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.MoviesController",
+    "Method": "UpdateMovies",
+    "RelativePath": "api/Movies/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateMovies",
+        "Type": "MovieRentalSystem.Models.Movies",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieRentalSystem.Controllers.MovieStatusController",
     "Method": "GetMovieStatus",
     "RelativePath": "api/MovieStatus",
@@ -330,6 +587,90 @@
       {
         "Name": "updatemoviestatus",
         "Type": "MovieRentalSystem.Models.MovieStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.RolesController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.RolesController",
+    "Method": "CreateRoles",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createRoles",
+        "Type": "MovieRentalSystem.Models.Roles",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.RolesController",
+    "Method": "PatchRoles",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "patchRoles",
+        "Type": "MovieRentalSystem.Models.Roles",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.RolesController",
+    "Method": "GetRolesById",
+    "RelativePath": "api/Roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieRentalSystem.Controllers.RolesController",
+    "Method": "UpdateRoles",
+    "RelativePath": "api/Roles/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateRoles",
+        "Type": "MovieRentalSystem.Models.Roles",
         "IsRequired": true
       }
     ],
