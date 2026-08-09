@@ -72,6 +72,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.18, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.22.0, )"
             }
           },
           "imports": [

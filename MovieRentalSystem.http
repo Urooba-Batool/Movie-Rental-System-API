@@ -363,3 +363,38 @@ content-type: application/json
     "customerId": 5,
     "bookingStatusId": 3
 }
+
+
+
+
+
+
+
+
+###
+//authentication
+
+POST {{MRS}}/api/auth/login
+content-type: application/json
+{
+  "email": "urooba@gmail.com",
+  "password": "admin123"
+}
+
+###
+
+POST {{MRS}}/api/auth/login
+content-type: application/json
+{
+  "email": "ayesha@gmail.com",
+  "password": "employee567"
+}
+
+###
+
+POST {{MRS}}/api/auth/login
+content-type: application/json
+{
+  "email": "omer@gmail.com",
+  "password": "employee567"
+}

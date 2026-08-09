@@ -16,5 +16,7 @@ namespace MovieRentalSystem.Models
 
         [ForeignKey("Roles")]
         public int RoleId { get; set; }
+
+        public Roles Role { get; set; } = null!;
     }
 }
