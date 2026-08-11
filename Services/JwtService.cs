@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using MovieRentalSystem.Models;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Services
 {

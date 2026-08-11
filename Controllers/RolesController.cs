@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
-using Microsoft.EntityFrameworkCore;
+using MovieRentalSystem.Services;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -10,24 +12,24 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class RolesController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _context;
+        private readonly IRoleService _roleService;
 
-        public RolesController(MovieRentalSystemContext context)
+        public RolesController(IRoleService roleService)
         {
-            _context = context;
+            _roleService = roleService;
         }
 
         [HttpGet]
         public ActionResult GetRoles()
         {
-            var roles = _context.Roles.ToList();
-            return Ok(roles);
+            var role = _roleService.GetRoles();
+            return Ok(role);
         }
 
         [HttpGet("{id}")]
         public ActionResult GetRolesById(int id)
         {
-            var roles = _context.Roles.Find(id);
+            var roles = _roleService.GetRolesById(id);
             if (roles == null)
             {
                 return NotFound();
@@ -36,40 +38,29 @@ namespace MovieRentalSystem.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateRoles(Roles createRoles)
+        public ActionResult AddRoles(Roles addRoles)
         {
-            _context.Roles.Add(createRoles);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(GetRolesById), new { id = createRoles.RoleId }, createRoles);
+            var roles = _roleService.AddRoles(addRoles);
+            return CreatedAtAction(nameof(GetRolesById), new { id = addRoles.RoleId }, addRoles);
         }
 
         [HttpPut("{id}")]
         public ActionResult UpdateRoles(int id, Roles updateRoles)
         {
-            var roles = _context.Roles.Find(id);
+            var roles = _roleService.UpdateRoles(id, updateRoles);
             if (roles == null)
             {
                 return NotFound();
             }
-            roles.RoleName = updateRoles.RoleName;
-            _context.SaveChanges();
             return Ok(roles);
         }
 
-        [HttpPatch]
-        public ActionResult PatchRoles(int id, Roles patchRoles)
+        [HttpPatch("{id}")]
+        public ActionResult PatchRoles(int id, Roles updateRoles)
         {
-            var roles = _context.Roles.Find(id);
-            if (roles == null)
-            {
-                return NotFound();
-            }
-            if (!string.IsNullOrEmpty(patchRoles.RoleName))
-            {
-                roles.RoleName = patchRoles.RoleName;
-            }
-            _context.SaveChanges();
-            return NoContent();
+            var roles = _roleService.PatchRoles(id, updateRoles);
+            
+            return Ok(roles);
         }
 
     }

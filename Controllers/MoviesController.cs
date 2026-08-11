@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -10,26 +11,24 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _context;
+        private readonly IMovieService _movieService;
 
-        public MoviesController(MovieRentalSystemContext context)
+        public MoviesController(IMovieService movieService)
         {
-            _context = context;
+            _movieService = movieService;
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public  ActionResult GetMovies()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _movieService.GetMovies();
             return Ok(movies);
         }
 
-        [Authorize(Roles = "Employee")]
         [HttpGet("{id}")]
         public ActionResult GetMoviesById(int id)
         {
-            var movies = _context.Movies.Find(id);
+            var movies = _movieService.GetMoviesById(id);
             if (movies == null)
             {
                 return NotFound();
@@ -40,62 +39,27 @@ namespace MovieRentalSystem.Controllers
         [HttpPut("{id}")]
         public ActionResult UpdateMovies(int id, Movies updateMovies)
         {
-            var movies = _context.Movies.Find(id);
+            var movies = _movieService.UpdateMovies(id, updateMovies);
             if(movies == null)
             {
                 return NotFound();
             }
-            movies.MovieTitle = updateMovies.MovieTitle;
-            movies.Director = updateMovies.Director;
-            movies.ReleaseYear = updateMovies.ReleaseYear;
-            movies.RentalPrice = updateMovies.RentalPrice;
-            movies.MovieGenreId = updateMovies.MovieGenreId;
-            movies.MovieStatusId = updateMovies.MovieStatusId;
-            _context.SaveChanges();
             return Ok(movies);
         }
 
         [HttpPost]
         public ActionResult AddMovies(Movies addMovies)
         {
-            _context.Movies.Add(addMovies);
-            _context.SaveChanges();
+            var movies = _movieService.AddMovies(addMovies);
+
             return CreatedAtAction(nameof(GetMoviesById), new { id = addMovies.Id }, addMovies);
         }
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public ActionResult PatchMovies(int id, Movies updateMovies)
             {
-            var movies = _context.Movies.Find(id);
-            if (movies == null)
-            {
-                return NotFound();
-            }
-            if (!string.IsNullOrEmpty(updateMovies.MovieTitle))
-            {
-                movies.MovieTitle = updateMovies.MovieTitle;
-            }
-            if (!string.IsNullOrEmpty(updateMovies.Director))
-            {
-                movies.Director = updateMovies.Director;
-            }
-            if (updateMovies.ReleaseYear != 0)
-            {
-                movies.ReleaseYear = updateMovies.ReleaseYear;
-            }
-            if (updateMovies.RentalPrice != 0)
-            {
-                movies.RentalPrice = updateMovies.RentalPrice;
-            }
-            if (updateMovies.MovieGenreId != 0)
-            {
-                movies.MovieGenreId = updateMovies.MovieGenreId;
-            }
-            if (updateMovies.MovieStatusId != 0)
-            {
-                movies.MovieStatusId = updateMovies.MovieStatusId;
-            }
-            _context.SaveChanges();
+            var movies = _movieService.PatchMovie(id, updateMovies);
+
             return Ok(movies);
         }
     }

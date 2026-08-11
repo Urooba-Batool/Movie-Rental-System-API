@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
-using Microsoft.EntityFrameworkCore;
+using MovieRentalSystem.Services;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -10,62 +12,45 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class MovieGenreController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _context;
+        private readonly IMovieGenreService _movieGenreService;
 
-        public MovieGenreController(MovieRentalSystemContext context)
+        public MovieGenreController(IMovieGenreService movieGenreService)
         {
-            _context = context;
+            _movieGenreService = movieGenreService;
         }
 
         [HttpGet]
         public ActionResult GetMovieGenres()
-        { 
-            var movieGenres = _context.MovieGenres.ToList();
+        {
+            var movieGenres = _movieGenreService.GetMovieGenre();
             return Ok(movieGenres);
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetMovieGnereById(int id)
+        public ActionResult GetMovieGenreById(int id)
         {
-            var movieGenres = _context.MovieGenres.Find(id);
-            if(movieGenres == null)
-            {
-                return NotFound();
-            }
+            var movieGenres = _movieGenreService.GetMovieGenreById(id);
             return Ok(movieGenres);
         }
 
         [HttpPut("{id}")]
         public ActionResult UpdateMovieGnre(int id, MovieGenres updateMovieGenre)
         {
-            var movieGenres = _context.MovieGenres.Find(id);
-            if(movieGenres == null)
-            {
-                return NotFound();
-            }
-            movieGenres.movieGenre = updateMovieGenre.movieGenre;
-            _context.SaveChanges();
+            var movieGenres = _movieGenreService.UpdateMovieGenre(id, updateMovieGenre);
             return Ok(movieGenres);
         }
 
         [HttpPost]
         public ActionResult AddMovieGenre(MovieGenres addmovieGenre)
         {
-            _context.MovieGenres.Add(addmovieGenre);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(GetMovieGnereById), new { id = addmovieGenre.Id }, addmovieGenre);
+            var movieGenres = _movieGenreService.AddMovieGenre(addmovieGenre);
+            return CreatedAtAction(nameof(GetMovieGenreById), new { id = addmovieGenre.Id }, addmovieGenre);
         }
 
         [HttpPatch]
         public ActionResult PatchMovieGenre(int id, MovieGenres patchMovieGenre)
         {
-            var movieGenres = _context.MovieGenres.Find(id);
-            if(movieGenres == null)
-            {
-                return NotFound();
-            }
-            movieGenres.movieGenre = patchMovieGenre.movieGenre;
-            _context.SaveChanges();
+            var movieGenres = _movieGenreService.PatchMovieGenre(id, patchMovieGenre);
             return Ok(movieGenres);
         }
     }

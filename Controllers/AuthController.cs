@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models.DTO;
-using MovieRentalSystem.Services;
+using MovieRentalSystem.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

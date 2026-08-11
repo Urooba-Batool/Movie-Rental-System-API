@@ -2,8 +2,8 @@
 
 namespace MovieRentalSystem.Services
 {
-    public interface IJwtService
+    public class BookingStatusService
     {
-        string generateToken(Users user);
+       
     }
 }

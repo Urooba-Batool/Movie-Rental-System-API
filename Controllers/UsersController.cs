@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -9,25 +10,25 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _context;
+        private readonly IUserService _userService;
 
-        public UsersController(MovieRentalSystemContext context)
+        public UsersController(IUserService userService)
         {
-            _context = context;
+            _userService = userService;
         }
 
 
         [HttpGet]
         public ActionResult GetUsers()
         {
-            var users = _context.Users.ToList();
+            var users = _userService.GetUsers();
             return Ok(users);
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetUser(int id)
+        public ActionResult GetUsersById(int id)
         {
-            var user = _context.Users.Find(id);
+            var user = _userService.GetUsersById(id);
             if (user == null)
             {
                 return NotFound();
@@ -36,63 +37,29 @@ namespace MovieRentalSystem.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdateUser(int id, Users updateuser)
-        {   var user = _context.Users.Find(id);
-            if (id == null)
-            {
-                return BadRequest();
-            }
+        public ActionResult UpdateUsers(int id, Users updateuser)
+        {   var user = _userService.UpdateUsers(id, updateuser);
+            
             if (user == null)
             {
                 return NotFound();
             }
-            user.FirstName = updateuser.FirstName;
-            user.LastName = updateuser.LastName;
-            user.Email = updateuser.Email;
-            user.Password = updateuser.Password;
-            user.RoleId = updateuser.RoleId;
-            _context.SaveChanges();
+            
             return Ok(user);
         }
 
         [HttpPost]
-        public ActionResult CreateUser(Users newuser)
+        public ActionResult AddUsers(Users newuser)
         {
-            _context.Users.Add(newuser);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(GetUser), new { id = newuser.UserId }, newuser);
+            _userService.AddUsers(newuser);
+            return CreatedAtAction(nameof(GetUsersById), new { id = newuser.UserId }, newuser);
         }
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public ActionResult PatchUser(int id, Users updateuser)
         {
-            var user = _context.Users.Find(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-            if (!string.IsNullOrEmpty(updateuser.FirstName))
-            {
-                user.FirstName = updateuser.FirstName;
-            }
-            if (!string.IsNullOrEmpty(updateuser.LastName))
-            {
-                user.LastName = updateuser.LastName;
-            }
-            if (!string.IsNullOrEmpty(updateuser.Email))
-            {
-                user.Email = updateuser.Email;
-            }
-            if (!string.IsNullOrEmpty(updateuser.Password))
-            {
-                user.Password = updateuser.Password;
-            }
-            if (updateuser.RoleId != 0)
-            {
-                user.RoleId = updateuser.RoleId;
-            }
-            _context.SaveChanges();
-            return NoContent();
+            var user = _userService.PatchUsers(id, updateuser);
+            return Ok(user);
         }
 
     }

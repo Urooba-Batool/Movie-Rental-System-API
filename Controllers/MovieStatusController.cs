@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -10,24 +11,24 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class MovieStatusController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _context;
+        private readonly IMovieStatusService _movieStatusService;
 
-        public MovieStatusController(MovieRentalSystemContext context)
+        public MovieStatusController(IMovieStatusService movieStatusService)
         {
-            _context = context;
+            _movieStatusService = movieStatusService;
         }
 
         [HttpGet]
         public ActionResult GetMovieStatus()
         {
-            var movieStatus = _context.MovieStatus.ToList();
+            var movieStatus = _movieStatusService.GetMovieStatus();
             return Ok(movieStatus);
         }
 
         [HttpGet("{id}")]
         public ActionResult GetMovieStatusById(int id)
         {
-            var movieStatus = _context.MovieStatus.Find(id);            
+            var movieStatus = _movieStatusService.GetMovieStatusById(id);
             if (movieStatus == null)
             {
                 return NotFound();
@@ -38,39 +39,28 @@ namespace MovieRentalSystem.Controllers
         [HttpPut("{id}")]
         public ActionResult UpdateMovieStatus(int id, MovieStatus updatemoviestatus)
         {
-            var movieStatus = _context.MovieStatus.Find(id);
+            var movieStatus = _movieStatusService.UpdateMovieStatus(id, updatemoviestatus);
             if (movieStatus == null)
             {
                 return NotFound();
             }
-            movieStatus.StatusName = updatemoviestatus.StatusName;
-            _context.SaveChanges();
+            
             return Ok(movieStatus);
         }
 
         [HttpPost]
-        public ActionResult CreateMovieStatus(MovieStatus newmoviestatus)
+        public ActionResult AddMovieStatus(MovieStatus addMovieStatus)
         {
-            _context.MovieStatus.Add(newmoviestatus);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(GetMovieStatusById), new { id = newmoviestatus.Id }, newmoviestatus);
+            _movieStatusService.AddMovieStatus(addMovieStatus);
+            return CreatedAtAction(nameof(GetMovieStatusById), new { id = addMovieStatus.Id }, addMovieStatus);
         }
 
-        [HttpPatch]
-        public ActionResult PatchMovieStatus(int id, MovieStatus patchmoviestatus)
+        [HttpPatch("{id}")]
+        public ActionResult PatchMovieStatus(int id, MovieStatus updateMovieStatus)
         {
-            var movieStatus = _context.MovieStatus.Find(id);
-            if (id == null)
-            {
-                return BadRequest();
-            }
-            if (movieStatus == null)
-            {
-                return NotFound();
-            }
-            movieStatus.StatusName = patchmoviestatus.StatusName;
-            _context.SaveChanges();
-            return NoContent();
+            var movieStatus = _movieStatusService.PatchMovieStatus(id, updateMovieStatus);
+
+            return Ok(movieStatus);
         }
 
         
