@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
@@ -16,6 +17,7 @@ namespace MovieRentalSystem.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public  ActionResult GetMovies()
         {
@@ -23,6 +25,7 @@ namespace MovieRentalSystem.Controllers
             return Ok(movies);
         }
 
+        [Authorize(Roles = "Employee")]
         [HttpGet("{id}")]
         public ActionResult GetMoviesById(int id)
         {

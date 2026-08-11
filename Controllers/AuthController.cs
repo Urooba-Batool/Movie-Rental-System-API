@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models.DTO;
+using MovieRentalSystem.Services;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.IdentityModel.Tokens;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -14,16 +16,19 @@ namespace MovieRentalSystem.Controllers
     public class AuthController : ControllerBase
     {
         private readonly MovieRentalSystemContext _context;
+        private readonly IJwtService _jwtService;
 
-        public AuthController(MovieRentalSystemContext context)
+
+        public AuthController(MovieRentalSystemContext context, IJwtService jwtService)
         {
             _context = context;
+            _jwtService = jwtService;
         }
 
         [HttpPost("login")]
         public IActionResult Login(LoginDTO login)
         {
-            var users = _context.Users.FirstOrDefault(u => u.Email == login.email);
+            var users = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.Email == login.email);
 
             if(users == null)
             {
@@ -35,7 +40,12 @@ namespace MovieRentalSystem.Controllers
                 return Unauthorized("Invalid Username or password");
             }
 
-            return Ok("login successful");
+            var token = _jwtService.generateToken(users);
+            return Ok(new
+                {
+                    token = token
+                }
+            );
         }
     }
 }
