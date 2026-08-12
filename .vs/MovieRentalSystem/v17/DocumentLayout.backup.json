@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|c:\\users\\admin\\onedrive\\desktop\\movierentalsystem\\movierentalsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|solutionrelative:movierentalsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|c:\\users\\admin\\onedrive\\desktop\\movierentalsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -69,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|c:\\users\\admin\\onedrive\\desktop\\movierentalsystem\\services\\interfaces\\icustomerstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|solutionrelative:services\\interfaces\\icustomerstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|c:\\users\\admin\\onedrive\\desktop\\movierentalsystem\\movierentalsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|solutionrelative:movierentalsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8FA9DDEE-2EEB-495A-9C72-1A4491E16DC3}|MovieRentalSystem.csproj|c:\\users\\admin\\onedrive\\desktop\\movierentalsystem\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -166,16 +166,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-10T10:48:01.741Z",
@@ -184,6 +184,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "Services\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\CustomerService.cs",
+              "RelativeToolTip": "Services\\CustomerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:16:07.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookingStatusService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingStatusService.cs",
+              "RelativeDocumentMoniker": "Services\\BookingStatusService.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingStatusService.cs",
+              "RelativeToolTip": "Services\\BookingStatusService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-11T10:50:01.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingService.cs",
+              "RelativeDocumentMoniker": "Services\\BookingService.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingService.cs",
+              "RelativeToolTip": "Services\\BookingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:44:13.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovieRentalSystem.http",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\MovieRentalSystem.http",
+              "RelativeDocumentMoniker": "MovieRentalSystem.http",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\MovieRentalSystem.http",
+              "RelativeToolTip": "MovieRentalSystem.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAD3AQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-08-10T10:59:51.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CustomerStatusService.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\CustomerStatusService.cs",
               "RelativeDocumentMoniker": "Services\\CustomerStatusService.cs",
@@ -196,46 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\CustomerService.cs",
-              "RelativeDocumentMoniker": "Services\\CustomerService.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\CustomerService.cs*",
-              "RelativeToolTip": "Services\\CustomerService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T07:16:07.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BookingStatusService.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingStatusService.cs",
-              "RelativeDocumentMoniker": "Services\\BookingStatusService.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingStatusService.cs*",
-              "RelativeToolTip": "Services\\BookingStatusService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-11T10:50:01.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookingService.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingService.cs",
-              "RelativeDocumentMoniker": "Services\\BookingService.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\BookingService.cs*",
-              "RelativeToolTip": "Services\\BookingService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T07:44:13.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -248,12 +261,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IBookingService.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\Interfaces\\IBookingService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IBookingService.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\Interfaces\\IBookingService.cs*",
-              "RelativeToolTip": "Services\\Interfaces\\IBookingService.cs*",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\Interfaces\\IBookingService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IBookingService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-11T10:50:33.241Z",
@@ -261,12 +274,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BookingsController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\BookingsController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookingsController.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\BookingsController.cs*",
-              "RelativeToolTip": "Controllers\\BookingsController.cs*",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "Controllers\\BookingsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T07:44:25.459Z",
@@ -274,12 +287,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "BookingStatusController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\BookingStatusController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookingStatusController.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\BookingStatusController.cs*",
-              "RelativeToolTip": "Controllers\\BookingStatusController.cs*",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\BookingStatusController.cs",
+              "RelativeToolTip": "Controllers\\BookingStatusController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T07:30:54.226Z",
@@ -287,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "MovieGenreService.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\MovieGenreService.cs",
               "RelativeDocumentMoniker": "Services\\MovieGenreService.cs",
@@ -300,12 +313,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CustomersController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\CustomersController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomersController.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\CustomersController.cs*",
-              "RelativeToolTip": "Controllers\\CustomersController.cs*",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "Controllers\\CustomersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-10T10:17:51.721Z",
@@ -313,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "CustomerStatusController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\CustomerStatusController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomerStatusController.cs",
@@ -326,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "IBookingStatusService.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\Interfaces\\IBookingStatusService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IBookingStatusService.cs",
@@ -339,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ICustomerService.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\Interfaces\\ICustomerService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\ICustomerService.cs",
@@ -352,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "MovieService.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\MovieService.cs",
               "RelativeDocumentMoniker": "Services\\MovieService.cs",
@@ -365,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ICustomerStatusService.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Services\\Interfaces\\ICustomerStatusService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\ICustomerStatusService.cs",
@@ -378,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "MoviesController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\Controllers\\MoviesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
@@ -387,19 +400,6 @@
               "ViewState": "AgIAADIAAAAAAAAAAAAgwBQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-10T11:39:40.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MovieRentalSystem.http",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\MovieRentalSystem.http",
-              "RelativeDocumentMoniker": "MovieRentalSystem.http",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\MovieRentalSystem\\MovieRentalSystem.http",
-              "RelativeToolTip": "MovieRentalSystem.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAD3AQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-08-10T10:59:51.521Z",
               "EditorCaption": ""
             },
             {
