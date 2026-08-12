@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -10,62 +11,46 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class CustomerStatusController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _context;
-
-        public CustomerStatusController(MovieRentalSystemContext context)
+        private readonly ICustomerStatusService _customerStatusService;
+        public CustomerStatusController(ICustomerStatusService customerStatusService)
         {
-            _context = context;
+            _customerStatusService = customerStatusService;
         }
 
+        
         [HttpGet]
         public ActionResult GetCustomerStatus()
         {
-            var customerStatus = _context.CustomerStatus.ToList();
+            var customerStatus = _customerStatusService.GetCustomerStatus();
             return Ok(customerStatus);
         }
 
         [HttpGet("{id}")]
         public ActionResult GetCustomerStatusById(int id)
         {
-            var customerStatus = _context.CustomerStatus.Find(id);
-            if (customerStatus == null)
-            {
-                return NotFound();
-            }
+            var customerStatus = _customerStatusService.GetCustomerStatusById(id);
+            
             return Ok(customerStatus);
         }
 
         [HttpPut("{id}")]
         public ActionResult UpdateCustomerStatus(int id, CustomerStatus updateCustomerStatus)
         {
-            var customerStatus = _context.CustomerStatus.Find(id);
-            if(customerStatus == null)
-            {
-                return NotFound();
-            }
-            customerStatus.StatusName = updateCustomerStatus.StatusName;
-            _context.SaveChanges();
+            var customerStatus = _customerStatusService.UpdateCustomerStatus(id, updateCustomerStatus);
             return Ok(customerStatus);
         }
 
         [HttpPost]
         public ActionResult AddCustomerStatus(CustomerStatus customerStatus)
         {
-            _context.CustomerStatus.Add(customerStatus);
-            _context.SaveChanges();
+            _customerStatusService.AddCustomerStatus(customerStatus);
             return CreatedAtAction(nameof(GetCustomerStatusById), new { id = customerStatus.Id }, customerStatus);
         }
 
         [HttpPatch]
         public ActionResult PatchCustomerStatus(int id, CustomerStatus patchCustomerStatus)
         {
-            var customerStatus = _context.CustomerStatus.Find(id);
-            if (customerStatus == null)
-            {
-                return NotFound();
-            }
-            customerStatus.StatusName = patchCustomerStatus.StatusName;
-            _context.SaveChanges();
+            var customerStatus = _customerStatusService.PatchCustomerStatus(id, patchCustomerStatus);
             return Ok(customerStatus);
         }
     }

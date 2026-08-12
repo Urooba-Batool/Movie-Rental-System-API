@@ -18,6 +18,7 @@ namespace MovieRentalSystem.Controllers
             _movieService = movieService;
         }
 
+        //[Authorize (Roles = "Admin")]
         [HttpGet]
         public  ActionResult GetMovies()
         {

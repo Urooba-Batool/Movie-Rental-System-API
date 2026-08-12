@@ -7,8 +7,8 @@ namespace MovieRentalSystem.Services.Interfaces
         List<Bookings> GetBooking();
 
         Bookings? GetBookingById(int id);
-        Bookings AddBookingStatus(Bookings addBooking);
-        Bookings? UpdateBookingStatus(int id, Bookings updateBooking);
-        Bookings? PatchBookingStatus(int id, Bookings updateBooking);
+        Bookings AddBooking(Bookings addBooking);
+        Bookings? UpdateBooking(int id, Bookings updateBooking);
+        Bookings? PatchBooking(int id, Bookings updateBooking);
     }
 }

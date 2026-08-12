@@ -21,6 +21,10 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IMovieStatusService, MovieStatusService>();
 builder.Services.AddScoped<IMovieGenreService, MovieGenreService>();
+builder.Services.AddScoped<ICustomerStatusService, CustomerStatusService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IBookingStatusService, BookingStatusService>();
+builder.Services.AddScoped<IBookingService, BookingService>(); 
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

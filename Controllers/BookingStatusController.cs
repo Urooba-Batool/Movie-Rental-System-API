@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MovieRentalSystem.Data;
 using MovieRentalSystem.Models;
 using Microsoft.EntityFrameworkCore;
+using MovieRentalSystem.Services.Interfaces;
 
 namespace MovieRentalSystem.Controllers
 {
@@ -10,62 +11,45 @@ namespace MovieRentalSystem.Controllers
     [ApiController]
     public class BookingStatusController : ControllerBase
     {
-        private readonly MovieRentalSystemContext _context;
+        private readonly IBookingStatusService _bookingStatusService;
 
-        public BookingStatusController(MovieRentalSystemContext context)
+        public BookingStatusController(IBookingStatusService bookingStatusService)
         {
-            _context = context;
+            _bookingStatusService = bookingStatusService;
         }
 
         [HttpGet]
         public ActionResult GetBookingStatus()
         {
-            var bookingStatus = _context.BookingStatus.ToList();
+            var bookingStatus = _bookingStatusService.GetBookingStatus();
             return Ok(bookingStatus);
         }
 
         [HttpGet("{id}")]
         public ActionResult GetBookingStatusById(int id)
         {
-            var bookingStatus = _context.BookingStatus.Find(id);
-            if(bookingStatus == null)
-            { 
-                return NotFound(); 
-            }
+            var bookingStatus = _bookingStatusService.GetBookingStatusById(id);
             return Ok(bookingStatus);
         }
 
         [HttpPut("{id}")]
         public ActionResult UpdateBookingStatus(int id, BookingStatus updateBookingStatus)
         {
-            var bookingStatus = _context.BookingStatus.Find(id);
-            if(bookingStatus == null)
-            {
-                return NotFound();
-            }
-            bookingStatus.StatusName = updateBookingStatus.StatusName;
-            _context.SaveChanges();
+            var bookingStatus = _bookingStatusService.UpdateBookingStatus(id, updateBookingStatus);
             return Ok(bookingStatus);
         }
 
         [HttpPost]
         public ActionResult AddBookingStatus(BookingStatus bookingStatus)
         {
-            _context.BookingStatus.Add(bookingStatus);
-            _context.SaveChanges();
+            _bookingStatusService.AddBookingStatus(bookingStatus);
             return CreatedAtAction(nameof(GetBookingStatusById), new { id = bookingStatus.Id }, bookingStatus);
         }
 
         [HttpPatch]
         public ActionResult PatchBookingStatus(int id, BookingStatus patchBookingStatus)
         {
-            var bookingStatus = _context.BookingStatus.Find(id);
-            if(bookingStatus == null)
-            {
-                return NotFound();
-            }
-            bookingStatus.StatusName = patchBookingStatus.StatusName;
-            _context.SaveChanges();
+            var bookingStatus = _bookingStatusService.PatchBookingStatus(id, patchBookingStatus);
             return Ok(bookingStatus);
         }
     }
